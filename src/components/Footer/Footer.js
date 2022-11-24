@@ -8,7 +8,8 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <img className='h-20' src={logo} alt="" />
-                    <p>Bike Bazar<br/>Providing reliable bike since 1992</p>
+                    <p className='text-2xl'>Bike Bazar</p>
+                    <p >Providing reliable bike since 1992</p>
                 </div> 
                 <div>
                     <span className="footer-title">Services</span> 
