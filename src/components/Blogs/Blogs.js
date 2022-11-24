@@ -48,7 +48,7 @@ const Blogs = () => {
                 <h3 className='text-2xl font-bold mb-2'>React vs. Angular vs. Vue?</h3>
                 <p className=''><b>Ans:</b> React: If you need to develop a javascript-based web application or mobile application, then you need the help of a front-end library for your user interfaces. React is the type of tool that can help you in this case. It offers some amazing features like virtual DOM, component-based architecture, JSX, and many more. Its user interface is super high quality and efficient.</p> <br />
                 <p className=''><b>Ans:</b> Angular: It’s a javascript-based framework and a dynamic web application. It will help you to use HTML as the template language! If you use it, you can feel the real-time testing experience in it!</p> <br />
-                <p className=''><b>Ans:</b> </p>
+                <p className=''><b>Ans:</b> Vue: It’s another Javascript-based open-source framework. You need this framework when you try to build user interfaces and any sort of single-page application.</p>
                 <br />
                 
             </div>
