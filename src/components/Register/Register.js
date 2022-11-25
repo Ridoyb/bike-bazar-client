@@ -25,7 +25,7 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                         <input className="btn btn-outline" type="submit" value="Register" />
-                        <p className=' mt-2'>Already Registered? <Link to='/login' className='link'>LogIn</Link></p>
+                        <p className=' mt-2'>Already Registered? <Link to='/login' className='link'></Link></p>
                         </div>
                         
                     </form>

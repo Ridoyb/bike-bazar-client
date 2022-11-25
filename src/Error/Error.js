@@ -7,7 +7,7 @@ const Error = () => {
         <div className='py-12 text-center'>
             <img className='mx-auto pb-8 rounded-lg shadow-2xl' src={error} alt="" />
               <div>
-              <Link to='/'><button className="btn btn-outline mt-5"></button></Link>
+              <Link to='/'><button className="btn btn-outline mt-5">Back To Home</button></Link>
               </div>
         </div>
     );
