@@ -13,34 +13,34 @@ const MyProducts = () => {
     console.log('email', user?.email)
 
     // handleAdvertiseItem
-  const handleAdvertiseItem = (product) => {
-    const advertise = {
-      productName: product.name,
-      Photo: product.img,
-      originalPrice: product.originalPrice,
-      sellerName: product.sellerName,
-      resalePrice: product.resalePrice,
-      location: product.location,
-      condition: product.condition,
-      used: product.used,
-    };
-    // console.log(advertise);
-    fetch('http://localhost:5000/advertise', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            
-        },
-        body: JSON.stringify(product)
-    })
-        .then(res => res.json())
-        .then(result => {
-            if (result.acknowledged) {
-                toast.success('Your Product Has Added Successfully');
-            }
-            console.log(result)
+    const handleAdvertiseItem = (product) => {
+        const advertise = {
+            productName: product.name,
+            Photo: product.img,
+            originalPrice: product.originalPrice,
+            sellerName: product.sellerName,
+            resalePrice: product.resalePrice,
+            location: product.location,
+            condition: product.condition,
+            used: product.used,
+        };
+        // console.log(advertise);
+        fetch('https://bike-bazar-server-nine.vercel.app/advertise', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(product)
         })
-  };
+            .then(res => res.json())
+            .then(result => {
+                if (result.acknowledged) {
+                    toast.success('Your Product Has Added Successfully');
+                }
+                console.log(result)
+            })
+    };
 
 
 
@@ -49,7 +49,7 @@ const MyProducts = () => {
         queryKey: ['myProducts'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-products/${user?.email}`);
+                const res = await fetch(`https://bike-bazar-server-nine.vercel.app/my-products/${user?.email}`);
                 const data = await res.json();
                 return data;
                 console.log(data)
@@ -69,7 +69,7 @@ const MyProducts = () => {
     // delete product
 
     const handleDelete = product => {
-        fetch(`http://localhost:5000/my-products/${product._id}`, {
+        fetch(`https://bike-bazar-server-nine.vercel.app/my-products/${product._id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -83,7 +83,7 @@ const MyProducts = () => {
                     refetch();
                 }
 
-                
+
             })
 
     }
@@ -113,14 +113,14 @@ const MyProducts = () => {
                                             <Link>
                                                 <button className="btn bg-green-800">Available</button>
                                             </Link>
-                                            
+
                                             <button
-                                            onClick={() => handleAdvertiseItem(product)}
-                                            className="btn btn-primary btn-xs"
+                                                onClick={() => handleAdvertiseItem(product)}
+                                                className="btn btn-primary btn-xs"
                                             >
-                                            Advertise
+                                                Advertise
                                             </button>
-                                           
+
                                         </div>
 
                                     </div>

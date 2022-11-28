@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const AllBuyers = () => {
     const [buyers, setBuyers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://bike-bazar-server-nine.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 const showSallers = data.filter(saler => saler.check === false)

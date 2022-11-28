@@ -10,7 +10,7 @@ const MyBuyers = () => {
         queryKey: ['myBuyers'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-orders/${user?.email}`);
+                const res = await fetch(`https://bike-bazar-server-nine.vercel.app/my-orders/${user?.email}`);
                 const data = await res.json();
                 return data;
             }

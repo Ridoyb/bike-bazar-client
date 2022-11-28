@@ -11,7 +11,7 @@ const MyOrders = () => {
         queryKey: ['myOrders'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-orders/${user?.email}`);
+                const res = await fetch(`https://bike-bazar-server-nine.vercel.app/my-orders/${user?.email}`);
                 const data = await res.json();
                 return data;
             }
@@ -68,12 +68,12 @@ const MyOrders = () => {
                                     <td>
                                         <div>
                                             <div className="font-bold">{order.buyername}</div>
-                                            
+
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            
+
                                             <div className="text-sm opacity-50">{order.location}</div>
                                         </div>
                                     </td>
@@ -86,7 +86,7 @@ const MyOrders = () => {
                                     <th>
                                         {
                                             order.Price && !order.paid && <Link to={`/dashboard/payment/${order._id}`}>
-                                            <button className='btn btn-outline'>Pay</button>
+                                                <button className='btn btn-outline'>Pay</button>
                                             </Link>
                                         }
                                         {

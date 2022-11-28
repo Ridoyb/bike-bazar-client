@@ -18,8 +18,8 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password)
-        
+        console.log(email, password)
+
 
         signIn(email, password)
             .then(result => {
@@ -27,8 +27,8 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                navigate(from, {replace: true});
-                
+                navigate(from, { replace: true });
+
             })
             .catch(error => {
                 console.error(error)
@@ -38,40 +38,40 @@ const Login = () => {
                 setLoading(false);
             })
     }
-    const {providerLogin}= useContext(AuthContext);
+    const { providerLogin } = useContext(AuthContext);
 
-    const googleProvider= new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
                 if (result.user.uid) {
                     toast.success("Login Successful");
                     const userInfo = {
-                      displayName: result.user.displayName,
-                      photoURL: result.user.photoURL,
-                      email: result.user.email,
-                      check: false,
+                        displayName: result.user.displayName,
+                        photoURL: result.user.photoURL,
+                        email: result.user.email,
+                        check: false,
                     };
-          
-                    fetch("http://localhost:5000/users", {
-                      method: "POST",
-                      headers: {
-                        "content-type": "application/json",
-                        
-                      },
-                      body: JSON.stringify(userInfo),
-                    })
-                      .then((res) => res.json())
-                      .then((result) => {
-                        
-                        
-                      });
 
-                    }
-                    setError("");
-                    
-                    navigate(from, { replace: true });
-                  })
+                    fetch("https://bike-bazar-server-nine.vercel.app/users", {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json",
+
+                        },
+                        body: JSON.stringify(userInfo),
+                    })
+                        .then((res) => res.json())
+                        .then((result) => {
+
+
+                        });
+
+                }
+                setError("");
+
+                navigate(from, { replace: true });
+            })
             .catch(error => console.error(error))
 
     }
@@ -83,38 +83,38 @@ const Login = () => {
             <div className="hero mb-12  mt-12  ">
                 <div className="hero-content   ">
                     <div className="card flex-shrink-0 w-100 border max-w-sm shadow-2xl bg-base-100">
-                    <h1 className="text-5xl font-bold text-center pt-4">Login</h1>
-                    <div>
-                    <form onSubmit={handleSubmit}  className="card-body">
-                        <div className="form-control">
-                            
-                            <input type="text" name='email' placeholder="email" className="input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                            
-                        </div>
-                        <div className="form-control mt-6">
-                            <input className="btn btn-outline" type="submit" value="Login" />
-                        </div>
-                    </form>
-                        
-                        <p className=' mt-2 text-center'>Didn't register? <Link to='/register' className='link'>Register Now</Link></p>
+                        <h1 className="text-5xl font-bold text-center pt-4">Login</h1>
+                        <div>
+                            <form onSubmit={handleSubmit} className="card-body">
+                                <div className="form-control">
+
+                                    <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                </div>
+                                <div className="form-control">
+
+                                    <input type="password" name='password' placeholder="password" className="input input-bordered" />
+
+                                </div>
+                                <div className="form-control mt-6">
+                                    <input className="btn btn-outline" type="submit" value="Login" />
+                                </div>
+                            </form>
+
+                            <p className=' mt-2 text-center'>Didn't register? <Link to='/register' className='link'>Register Now</Link></p>
                         </div>
 
-                        
+
                         <fieldset class="border-t border-slate-300 mt-4">
                             <legend class="mx-auto px-4 text-white text-2xl italic">OR</legend>
                         </fieldset>
 
                         <div className='text-center mb-12'>
-                            <button onClick={handleGoogleSignIn}  className="btn btn-outline gap-2 mt-8">
-                            <FaGoogle className='mx-2'></FaGoogle>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline gap-2 mt-8">
+                                <FaGoogle className='mx-2'></FaGoogle>
                                 LogIn With Google
                             </button>
                         </div>
-                        
+
                         <p className='text-danger'>{error}</p>
                     </div>
                 </div>

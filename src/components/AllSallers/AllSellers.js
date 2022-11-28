@@ -4,11 +4,11 @@ const AllSellers = () => {
 
     const [sallers, setSallers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://bike-bazar-server-nine.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 const showSallers = data.filter(saler => saler.check === true)
-                
+
 
                 setSallers(showSallers)
             })

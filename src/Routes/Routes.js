@@ -18,7 +18,7 @@ const { createBrowserRouter } = require("react-router-dom");
 const { default: Home } = require("../components/Home/Home/Home");
 const { default: Main } = require("../Layout/Main");
 
-const router= createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
@@ -26,11 +26,11 @@ const router= createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/categories')
+                loader: () => fetch('https://bike-bazar-server-nine.vercel.app/categories')
             },
             {
                 path: '/products/:category',
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`),
+                loader: ({ params }) => fetch(`https://bike-bazar-server-nine.vercel.app/products/${params.category}`),
                 element: <PrivateRoutes><AllProducts></AllProducts></PrivateRoutes>,
 
             },
@@ -54,43 +54,43 @@ const router= createBrowserRouter([
         path: "/dashboard",
         element: <DashboardLayout></DashboardLayout>,
         children: [
-          {
-            path: "/dashboard",
-            element: <Dashboard></Dashboard>,
-            loader: () => fetch("http://localhost:5000/users"),
-          },
-          {
-            path: "/dashboard/all-sellers",
-            element: <AllSellers></AllSellers>,
-          },
-          {
-            path: "/dashboard/all-buyers",
-            element: <AllBuyers></AllBuyers>,
-          },
-          {
-            path: "/dashboard/my-orders",
-            element: <MyOrders></MyOrders>,
-          },
-          {
-            path: "/dashboard/my-products",
-            element: <MyProducts></MyProducts>,
-          },
-          {
-            path: "/dashboard/add-a-product",
-            element: <AddAProduct></AddAProduct>,
-            loader: () => fetch("http://localhost:5000/categories"),
-          },
-          {
-            path: "/dashboard/my-buyers",
-            element: <MyBuyers></MyBuyers>,
-          },
-          {
-            path: "/dashboard/payment/:id",
-            element: <Payment></Payment>,
-            loader: ({params}) => fetch(`https://doctors-portal-server-rust.vercel.app/bookings/${params.id}`)
-          },
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>,
+                loader: () => fetch("https://bike-bazar-server-nine.vercel.app/users"),
+            },
+            {
+                path: "/dashboard/all-sellers",
+                element: <AllSellers></AllSellers>,
+            },
+            {
+                path: "/dashboard/all-buyers",
+                element: <AllBuyers></AllBuyers>,
+            },
+            {
+                path: "/dashboard/my-orders",
+                element: <MyOrders></MyOrders>,
+            },
+            {
+                path: "/dashboard/my-products",
+                element: <MyProducts></MyProducts>,
+            },
+            {
+                path: "/dashboard/add-a-product",
+                element: <AddAProduct></AddAProduct>,
+                loader: () => fetch("https://bike-bazar-server-nine.vercel.app/categories"),
+            },
+            {
+                path: "/dashboard/my-buyers",
+                element: <MyBuyers></MyBuyers>,
+            },
+            {
+                path: "/dashboard/payment/:id",
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://doctors-portal-server-rust.vercel.app/bookings/${params.id}`)
+            },
         ],
-      },
+    },
 ])
 
 export default router

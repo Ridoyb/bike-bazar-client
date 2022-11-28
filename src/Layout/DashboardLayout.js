@@ -42,7 +42,15 @@ const DashboardLayout = () => {
         <div className="drawer-side ">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
 
-          <div className="avatar items-center justify-center mt-10">
+          <div className="drawer">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
+                <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label>
+            </div> 
+            <div className="drawer-side">
+                <label htmlFor="my-drawer" className="drawer-overlay"></label>
+                <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+                <div className="avatar items-center justify-center mt-10">
             <div className="w-24 h-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img src={user?.photoURL} alt="user" />
             </div>
@@ -107,6 +115,10 @@ const DashboardLayout = () => {
               Logout
             </button>
           </NavLink>
+      
+    </ul>
+  </div>
+</div>
         </div>
       </div>
       <Footer></Footer>

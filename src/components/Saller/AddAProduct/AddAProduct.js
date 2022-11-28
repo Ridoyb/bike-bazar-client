@@ -6,10 +6,10 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const AddAProduct = () => {
     const categories = useLoaderData();
-    const { user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [spinner,setSpinner]= useState(false);
-    
+    const [spinner, setSpinner] = useState(false);
+
 
 
     const handleSubmit = event => {
@@ -24,7 +24,7 @@ const AddAProduct = () => {
         const category = form.category.value;
         const image = form.image.files[0];
         const sellerName = form.sellerName.value;
-        
+
 
 
 
@@ -56,15 +56,15 @@ const AddAProduct = () => {
                         img: imageData.data.url,
                         name,
                         email: user?.email,
-                        
-                    }
-                   
 
-                    fetch('http://localhost:5000/add-a-product', {
+                    }
+
+
+                    fetch('https://bike-bazar-server-nine.vercel.app/add-a-product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
-                            
+
                         },
                         body: JSON.stringify(product)
                     })
@@ -82,7 +82,7 @@ const AddAProduct = () => {
 
     }
 
-    if(spinner){
+    if (spinner) {
         return <button className="btn loading vertical-center">loading</button>
     }
 

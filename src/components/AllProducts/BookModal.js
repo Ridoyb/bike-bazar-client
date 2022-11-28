@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 
 
-const BookModal = ({ bikeData,setBikeData }) => {
+const BookModal = ({ bikeData, setBikeData }) => {
     const { user } = useContext(AuthContext);
     const { displayName, email, photoURL } = user
     const { title, originalPrice, photo } = bikeData;
@@ -24,7 +24,7 @@ const BookModal = ({ bikeData,setBikeData }) => {
             buyername, photo, photoURL, name, Price, email, phone, location
         };
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://bike-bazar-server-nine.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,8 +49,8 @@ const BookModal = ({ bikeData,setBikeData }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
-                    <label onClick={()=> setBikeData(null)}  htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    
+                    <label onClick={() => setBikeData(null)} htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
 
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
                         <input name="name" type="text" readOnly defaultValue={title} placeholder="Your Name" className="input w-full input-bordered" />

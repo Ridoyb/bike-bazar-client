@@ -9,17 +9,17 @@ import CategoryCard from './CategoryCard';
 const Home = () => {
 
     // const {_id}= product;
-   
+
     // const [categories, setCategories] = useState([]);
     // useEffect(() => {
-    //     fetch('http://localhost:5000/categories')
+    //     fetch('https://bike-bazar-server-nine.vercel.app/categories')
     //         .then(res => res.json())
     //         .then(data => setCategories(data));
     // }, [])
 
-    const categories= useLoaderData();
+    const categories = useLoaderData();
 
-  
+
 
     return (
         <div>
@@ -27,8 +27,8 @@ const Home = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">MAKE YOUR DREAM BIKE TRULY YOURS</h1>
-                    <p className="mb-5 text-3xl">Buy and sell your bikes....</p>
+                        <h1 className="mb-5 text-5xl font-bold">MAKE YOUR DREAM BIKE TRULY YOURS</h1>
+                        <p className="mb-5 text-3xl">Buy and sell your bikes....</p>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const Home = () => {
                         categories.map(category => <CategoryCard
                             key={category._id}
                             category={category}
-                            
+
                         ></CategoryCard>)
                     }
                 </div>
@@ -56,7 +56,7 @@ const Home = () => {
                             <li className="step">Book</li>
                             <li className="step">Receive bike</li>
                         </ul>
-                    
+
                     </div>
                 </div>
             </div>
