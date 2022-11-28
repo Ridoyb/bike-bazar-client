@@ -10,7 +10,7 @@ const UseBuyer = email => {
                 .then(data => {
                     console.log(data);
                     setIsBuyer(data.isBuyer);
-                    setIsBuyerLoading(false);
+                    setIsBuyerLoading(false)
                 })
         }
     }, [email])
