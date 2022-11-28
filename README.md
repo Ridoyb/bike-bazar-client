@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 ### Name: Bike Bazar
- Live link: [Firebase] (https://photography-review-e2df3.web.app/)
+ Live link: [Firebase] (https://bike-bazar-9e412.web.app/)
 
  Features:
  * Responsive Navbar
