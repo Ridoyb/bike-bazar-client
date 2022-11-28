@@ -8,7 +8,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            
+            <h2 className='text-3xl text-center font-semibold  mt-10'>All Users</h2>
 
             <div className="overflow-x-auto w-5/6 mx-auto my-10">
                 <table className="table w-full">
