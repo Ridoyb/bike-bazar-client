@@ -1,5 +1,35 @@
 # Getting Started with Create React App
 
+### Name: Bike Bazar
+ Live link: [Firebase] (https://photography-review-e2df3.web.app/)
+
+ Features:
+ * Responsive Navbar
+ * Responsive website
+ * Data call from server side
+ * MongoDB Database
+ * Data add delete,add,modify system
+ * Manual email/password and Google login login/register
+ * Private Route
+ * Sell used products
+ * add products
+ * User data shown as user profile
+ * Blog
+ * buy products
+
+
+
+ Frameworks:
+ * React
+ * Tailwind
+ * Daisy Ui
+ * Firebase
+ * React image view
+ * react Router Dom
+ * MongoDB
+ * Javascript
+ * CSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
