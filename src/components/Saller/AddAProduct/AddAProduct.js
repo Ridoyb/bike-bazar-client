@@ -77,7 +77,7 @@ const AddAProduct = () => {
                             console.log(result)
                         })
                 }
-                setSpinner(false)
+                
             })
 
     }
