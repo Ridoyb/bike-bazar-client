@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Yamaha R15 v3",
+        "img": "https://media.zigcdn.com/media/content/2019/Jan/r15_darknight.jpg",
+        "resalePrice": "300.00",
+        "Location": "Rangpur",
+        "originalPrice": "500.00",
+        "usedTime": "1 year",
+        "sellerName": "Ridoy",
+        "category":  "Yamaha"
+        
+    },
+    {
+        "title": "Yamaha R1M",
+        "img": "https://www.webbikeworld.com/wp-content/uploads/2021/01/2021-YZF-R1M.jpg",
+        "resalePrice": "300.00",
+        "Location": "Dhaka",
+        "originalPrice": "300.00",
+        "usedTime": "3 years",
+        "sellerName": "Sadik",
+        "category": "Yamaha"
+        
+    },
+    {
+        "title": "Suzuki Gixxer SF",
+        "img": "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2019/05/3-63.jpg",
+        "resalePrice": "300.00",
+        "Location": "Khulna",
+        "originalPrice": "300.00",
+        "usedTime": "3 years",
+        "sellerName": "Shawon",
+        "category": "Suzuki"
+        
+    },
+    {
+        "title": "Suzuki GSX-R",
+        "img": "https://www.webbikeworld.com/2021-suzuki-gsx-r1000/2021-suzuki-gsx-r1000-hero-image/",
+        "resalePrice": "300.00",
+        "Location": "Barishal",
+        "originalPrice": "300.00",
+        "usedTime": "3 years",
+        "sellerName": "Liton",
+        "category": "Suzuki"
+        
+    },
+    {
+        "title": "Kawasaki Ninja H2R",
+        "img": "https://imgd.aeplcdn.com/476x268/bw/models/kawasaki-ninja-h2r-standard20200803234022.jpg",
+        "resalePrice": "300.00",
+        "Location": "Barishal",
+        "originalPrice": "300.00",
+        "usedTime": "3 years",
+        "sellerName": "Mahmud",
+        "category": "Kawasaki"
+        
+    },
+    {
+        "title": "Kawasaki Ninja 400",
+        "img": "https://www.cycleworld.com/resizer/CTL-gFj6mOtAIRKGGI2Rm3dt3co=/1440x0/smart/cloudfront-us-east-1.images.arcpublishing.com/octane/SZXGFRI4URFRZBFCD4XSDZEIHA.jpg",
+        "resalePrice": "300.00",
+        "Location": "Sylhet",
+        "originalPrice": "300.00",
+        "usedTime": "3 years",
+        "sellerName": "Habib",
+        "category": "Kawasaki"
+        
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        
+        "name": "Yamaha",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAUg9ZXWZxnmNxz0c-qOhhWRWfs_cH6yKD98Sz5cFumLqXGOEBqFdG_iMLi5YezjIL6tc&usqp=CAU"
+        
+    },
+    {
+        "name": "Suzuki",
+        "img": "https://thumbs.dreamstime.com/b/logo-suzuki-logo-suzuki-car-color-vector-format-aviable-ai-124808823.jpg"
+        
+    },
+    {
+        "name": "Kawasaki",
+        "img": "https://i.pinimg.com/originals/ae/ef/e1/aeefe11702d94ea123fea94d0b58bd37.jpg"
+        
+    }
+]

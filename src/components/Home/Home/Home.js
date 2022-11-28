@@ -1,7 +1,26 @@
-import React from 'react';
-import { TiArrowForward} from 'react-icons/ti';
+import { useQuery } from '@tanstack/react-query';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import Advertise from '../../Advertise/Advertise';
+
+import CategoryCard from './CategoryCard';
+
 
 const Home = () => {
+
+    // const {_id}= product;
+   
+    // const [categories, setCategories] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/categories')
+    //         .then(res => res.json())
+    //         .then(data => setCategories(data));
+    // }, [])
+
+    const categories= useLoaderData();
+
+  
+
     return (
         <div>
             <div className="hero min-h-screen mb-8" style={{ backgroundImage: `url("https://websitedemos.net/bike-modification-04/wp-content/uploads/sites/736/2020/11/custom-bike-builder-hero-section-bg.jpg")` }}>
@@ -13,11 +32,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <p className='text-center text-3xl my-8'>BROWSE CATEGORIES</p>
+            <div className='text-center '>
+                <h1 className="text-5xl font-bold title ">Top Categories</h1>
+                <div className='grid justify-center m-auto justify-items-center gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 container mx-auto '>
+                    {
+                        categories.map(category => <CategoryCard
+                            key={category._id}
+                            category={category}
+                            
+                        ></CategoryCard>)
+                    }
+                </div>
             </div>
 
-            <div className="hero ">
+            <div className="hero mt-8 mb-8">
                 <div className="hero-content  flex-col lg:flex-row">
                     <img src="https://websitedemos.net/bike-modification-04/wp-content/uploads/sites/736/2020/11/custom-bike-builder-motorcycle.png" className=" rounded-lg shadow-2xl" alt='' />
                     <div>
@@ -32,6 +60,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <Advertise></Advertise>
         </div>
     );
 };

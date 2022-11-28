@@ -1,16 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../Assets/logo.png'
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
+import { AiOutlineLogout} from 'react-icons/ai';
 
 const Navbar = () => {
 
     const menuItems = <>
         <li className='font-semibold menu-items'><Link to='/'>Home</Link></li>
         <li className='font-semibold menu-items'><Link to='/blog'>Blog</Link></li>
-        <li className='font-semibold menu-items'><Link to='/login'>Login</Link></li>
-        <li className='font-semibold menu-items'><Link to='/register'>Register</Link></li>
         
         </>
+
+const { user, logOut } = useContext(AuthContext);
+const nevigate = useNavigate();
+
+const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.error(error))
+        nevigate('/')
+}
     return (
         <div >
             <div className="navbar bg-base-200 main-menu px-12">
@@ -31,6 +42,45 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
+            </div>
+
+            <div className="navbar-end">
+                
+                <>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <Link className='font-semibold mr-4' to='/dashboard'>Dashboard</Link>
+                                        <button className='mr-2' variant="" onClick={handleLogOut}><AiOutlineLogout></AiOutlineLogout></button>
+                                        
+                                    </>
+                                    :
+                                    <>
+                                        <div className='d-flex'>
+                                        <Link className='font-semibold mr-4' to='/login'>Login</Link>
+                                        <Link className='font-semibold' to='/register'>Register</Link>
+                                        </div>
+                                    </>
+                            }
+
+
+                        </>
+
+                        
+                        <Link  to="/profile">
+                            
+                        {user?.photoURL ?
+                                <img  alt=''
+                                    className=' avatar
+                                    w-12  rounded-full'
+                                    style={{ height: '45px' }}
+                                    
+                                    title={user?.displayName}
+                                    src={user?.photoURL}>
+                                </img>
+                                : <FaUser className='w-16 h-8 ml-2'></FaUser>
+                            }
+                        </Link>
             </div>
             
             </div>
